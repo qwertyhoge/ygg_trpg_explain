@@ -20,6 +20,10 @@ module.exports = {
                     loader: "babel-loader",
                 },
                 include: path.resolve(__dirname, "src")
+            },
+            {
+                test: /.(png|jpg|gif|svg)$/,
+                loader: 'file-loader'
             }
         ]
     }

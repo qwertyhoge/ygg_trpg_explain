@@ -1,16 +1,48 @@
 import ProgressCard from "./ProgressCard";
+import Breadcrumb from "./Breadcrumb"
 
-function App() {
+function App(props) {
+    const mainStyle = {
+        maxWidth: '1020px',
+        margin: '10px auto'
+    };
+    const headerStyles = {
+        background: '#fefcea'
+    }
+
     return (
-        <div className="App">
-            <header className="App-header">
-
+        <div className="app">
+            <header className="app-header" style={headerStyles}>
+                <Breadcrumb
+                    route={[
+                        {
+                            href: "",
+                            name: "全体",
+                            key: 'index'
+                        },
+                        {
+                            href: "",
+                            name: "テスト",
+                            key: 'test'
+                        }
+                    ]}
+                >
+                </Breadcrumb>
             </header>
-            <ProgressCard
-                title="test"
-                paragraph="test progress"
-            >
-            </ProgressCard>
+            <div className="main" style={mainStyle}>
+                <ProgressCard
+                    title="test1"
+                    paragraph="test2 progress"
+                    reference="test reference"
+                    detail="test detail"
+                >
+                </ProgressCard>
+                <ProgressCard
+                    title="test"
+                    paragraph="test progress"
+                >
+                </ProgressCard>
+            </div>
         </div>
     );
 }
