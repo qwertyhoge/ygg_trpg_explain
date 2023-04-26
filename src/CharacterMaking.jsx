@@ -1,28 +1,17 @@
 import ProgressCard from "./ProgressCard";
+import PageBase from "./PageBase";
 
 function CharacterMaking(props){
-    const mainStyle = {
-        maxWidth: '1020px',
-        margin: '10px auto'
-    };
-    const headerStyles = {
-        background: '#fefcea'
-    }
+    const cards = <ProgressCard
+            title="t"
+            paragraph="t2"
+        >
+        </ProgressCard>
     
-    return (
-    <div className="app">
-        <header className="app-header" style={headerStyles}>
-            {props.breadcrumb}
-        </header>
-        <div className="main" style={mainStyle}>
-            <ProgressCard
-                title="t"
-                paragraph="t2"
-            >
-            </ProgressCard>
-        </div>
-    </div>
-    )
+    return <PageBase
+        header={props.header}
+        progressCards={cards}
+    ></PageBase>
 }
 
 
