@@ -21,6 +21,7 @@ function App(props) {
         </Breadcrumb>;
         const header = <AppHeader
             breadcrumb={breadcrumb}
+            pageTitle="全体像"
         ></AppHeader>
 
         return <Overall
@@ -47,6 +48,7 @@ function App(props) {
         ></Breadcrumb>;
         const header = <AppHeader
             breadcrumb={breadcrumb}
+            pageTitle="キャラクター作成"
         ></AppHeader>
 
         return <CharacterMaking

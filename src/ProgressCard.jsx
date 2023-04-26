@@ -4,12 +4,15 @@ function ProgressCard(props) {
         fontSize: '2.0em',
         padding: '5px'
     };
+    const wrapperStyles = {
+        maxWidth: '1480px',
+        margin: '20px auto',
+        padding: '0px 10px'
+    }
     const cardStyles = {
-        maxWidth: '1000px',
         minHeight: '200px',
         backgroundColor: '#ededed',
         boxShadow: '1px 2px 4px 0px #4f4f4f',
-        margin: '20px 0px',
         display: 'flex',
         fontSize: '1.3em'
     };
@@ -18,16 +21,18 @@ function ProgressCard(props) {
     };
 
     return (
-        <div className="progress-card" style={cardStyles}>
-            <div style={{flexGrow: 1}}>
-                <div style={headerStyles}>
-                    {props.title}
+        <div className="progress-card-wrapper" style={wrapperStyles}>
+            <div className="progress-card" style={cardStyles}>
+                <div style={{flexGrow: 1}}>
+                    <div style={headerStyles}>
+                        {props.title}
+                    </div>
+                    <div style={paragraphStyles}>
+                        {props.paragraph}
+                    </div>
                 </div>
-                <div style={paragraphStyles}>
-                    {props.paragraph}
-                </div>
+                {props.links}
             </div>
-            {props.links}
         </div>
     );
 }

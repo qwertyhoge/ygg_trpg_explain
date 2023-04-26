@@ -1,7 +1,6 @@
 function PageBase(props){
     const mainStyle = {
-        maxWidth: '1020px',
-        margin: '10px auto'
+        margin: '10px 0px'
     };
 
     return (
