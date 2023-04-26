@@ -2,6 +2,7 @@ import {useState} from 'react';
 import Overall from "./Overall";
 import CharacterMaking from './CharacterMaking';
 import Breadcrumb from './Breadcrumb';
+import AppHeader from './AppHeader';
 
 function App(props) {
     const [page, setPage] = useState('overall');
@@ -18,9 +19,12 @@ function App(props) {
             pageSetter={setPage}
         >
         </Breadcrumb>;
+        const header = <AppHeader
+            breadcrumb={breadcrumb}
+        ></AppHeader>
 
         return <Overall
-            breadcrumb={breadcrumb}
+            header={header}
             pageSetter={setPage}
         ></Overall>
     };
@@ -41,9 +45,12 @@ function App(props) {
             ]}
             pageSetter={setPage}
         ></Breadcrumb>;
+        const header = <AppHeader
+            breadcrumb={breadcrumb}
+        ></AppHeader>
 
         return <CharacterMaking
-            breadcrumb={breadcrumb}
+            header={header}
             pageSetter={setPage}
         ></CharacterMaking>
     }

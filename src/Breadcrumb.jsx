@@ -1,20 +1,34 @@
+import styled from "styled-components"
+
 function Breadcrumb(props) {
     const breadcrumbOlStyles = {
         display: 'inline-block',
         listStyleType: 'none',
         fontSize: 0,
     };
-    const breadcrumbLiStyles = {
-        display: 'inline-block',
-        fontSize: '1.1rem',
-    };
 
-    const buttonStyles = {
-        margin: '2px 5px',
-        padding: '0px',
-        border: '0px',
-        cursor: 'pointer'
-    }
+    const BreadcrumbLi = styled.li`
+        display: inline-block;
+        font-size: 1.1rem;
+        &:after{
+            content: ">";
+            padding: 0 0.2em;
+            font-size: 0.7em;
+            color: #444444;
+        }
+        &:last-child:after{
+            content: "";
+        }
+    `;
+
+    const Button = styled.button`
+        margin: 2px 5px;
+        padding: 2px;
+        border: 1px #aaa solid;
+        border-radius: 5px;
+        background-color: #eff6ff;
+        cursor: pointer;
+    `;
 
     const changePage = (pageName) => {
         props.pageSetter(pageName);
@@ -24,26 +38,18 @@ function Breadcrumb(props) {
         return <ol className="breadcrumb" style={breadcrumbOlStyles}>
             {
             arr.map((l, i) => {
-                let liClass = "breadcrumb-item";
-                if(i == 0){
-                    liClass += " breadcrumb-item-start"
-                }else if(i == arr.length - 1){
-                    liClass += " breadcrumb-item-end"
-                }else{
-                    liClass += " breadcrumb-item-way"
-                }
-                return <li className={liClass} style={breadcrumbLiStyles} key={l.key}>
-                    <button className="breadcrumb-link" onClick={() => changePage(l.id)} style={buttonStyles}>
+                return <BreadcrumbLi>
+                    <Button className="breadcrumb-link" onClick={() => changePage(l.id)}>
                         {l.name}
-                    </button>
-                </li>
+                    </Button>
+                </BreadcrumbLi>
             })
             }
         </ol>
     }
 
     return (
-    props.route && arrayToBreadcrumb(props.route)
+        props.route && arrayToBreadcrumb(props.route)
     );
 }
 
