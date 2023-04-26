@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "test": "babel-node server/server.js",
-    "build": "webpack"
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && webpack"
   },
   "repository": {
     "type": "git",
@@ -26,12 +26,15 @@
     "@babel/preset-env": "^7.4.4",
     "@babel/register": "^7.4.4",
     "babel-loader": "^8.0.6",
-    "core-js": "^3.0.1",
+    "core-js": "^2.6.12",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.13.0",
     "express": "^4.16.4",
     "highcharts": "^7.1.1",
+    "node": "^19.8.1",
     "node-fetch": "^2.6.0",
+    "npm": "^9.6.5",
+    "package.json": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "webpack": "^4.31.0",

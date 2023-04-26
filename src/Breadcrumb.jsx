@@ -9,6 +9,10 @@ function Breadcrumb(props) {
         fontSize: '1.1rem',
     };
 
+    const changePage = (pageName) => {
+        props.pageSetter(pageName);
+    };
+
     const arrayToBreadcrumb = (arr) => {
         return <ol className="breadcrumb" style={breadcrumbOlStyles}>
             {
@@ -22,9 +26,9 @@ function Breadcrumb(props) {
                     liClass += " breadcrumb-item-way"
                 }
                 return <li className={liClass} style={breadcrumbLiStyles} key={l.key}>
-                    <a className="breadcrumb-link" href={l.href}>
+                    <button className="breadcrumb-link" onClick={() => changePage(l.id)}>
                         {l.name}
-                    </a>
+                    </button>
                 </li>
             })
             }

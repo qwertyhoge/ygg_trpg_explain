@@ -3,7 +3,6 @@ import fs from "fs";
 import path from "path";
 import fetch from "node-fetch"
 
-
 function fetchTestData() {
   return fetch('https://facebook.github.io/react-native/movies.json')
     .then((response) => response.json())
@@ -21,10 +20,8 @@ const app = express();
 const public_path = path.resolve(process.cwd(), "public/");
 app.use(express.static(public_path));
 
-console.log(fetchTestData());
-
 app.get('/', (req, res)=>{
-    const index = fs.readFileSync("./public/index.html", "utf-8");
+    const index = fs.readFileSync("./views/index.html", "utf-8");
     res.send(index);
 });
 

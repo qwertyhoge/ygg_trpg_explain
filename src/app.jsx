@@ -1,50 +1,63 @@
-import ProgressCard from "./ProgressCard";
-import Breadcrumb from "./Breadcrumb"
+import {useState} from 'react';
+import Overall from "./Overall";
+import CharacterMaking from './CharacterMaking';
+import Breadcrumb from './Breadcrumb';
 
 function App(props) {
-    const mainStyle = {
-        maxWidth: '1020px',
-        margin: '10px auto'
+    const [page, setPage] = useState('overall');
+
+    const constructOverall = () => {
+        const breadcrumb = <Breadcrumb
+            route={[
+                {
+                    id: 'overall',
+                    name: '全体',
+                    key: 'overall'
+                }
+            ]}
+            pageSetter={setPage}
+        >
+        </Breadcrumb>;
+
+        return <Overall
+            breadcrumb={breadcrumb}
+            pageSetter={setPage}
+        ></Overall>
     };
-    const headerStyles = {
-        background: '#fefcea'
+
+    const constructCharacterMaking = () => {
+        const breadcrumb = <Breadcrumb
+            route={[
+                {
+                    id: "overall",
+                    name: "全体",
+                    key: 'overall'
+                },
+                {
+                    id: "character_making",
+                    name: "キャラクター作成",
+                    key: 'character_making'
+                }
+            ]}
+            pageSetter={setPage}
+        ></Breadcrumb>;
+
+        return <CharacterMaking
+            breadcrumb={breadcrumb}
+            pageSetter={setPage}
+        ></CharacterMaking>
     }
 
-    return (
-        <div className="app">
-            <header className="app-header" style={headerStyles}>
-                <Breadcrumb
-                    route={[
-                        {
-                            href: "",
-                            name: "全体",
-                            key: 'index'
-                        },
-                        {
-                            href: "",
-                            name: "テスト",
-                            key: 'test'
-                        }
-                    ]}
-                >
-                </Breadcrumb>
-            </header>
-            <div className="main" style={mainStyle}>
-                <ProgressCard
-                    title="test1"
-                    paragraph="test2 progress"
-                    reference="test reference"
-                    detail="test detail"
-                >
-                </ProgressCard>
-                <ProgressCard
-                    title="test"
-                    paragraph="test progress"
-                >
-                </ProgressCard>
-            </div>
-        </div>
-    );
+    const content = ((stPage) => {
+        if(stPage === 'character_making'){
+            return constructCharacterMaking()
+        }else{
+            return constructOverall();
+        }
+    })(page);
+
+    return content;
 }
+
 
 export default App;

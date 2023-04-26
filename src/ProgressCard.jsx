@@ -1,6 +1,3 @@
-import bookSvg from './book.svg'
-import loupeSvg from './loupe.svg'
-
 function ProgressCard(props) {
     const headerStyles = {
         borderBottom: '1px solid black',
@@ -18,17 +15,7 @@ function ProgressCard(props) {
     };
     const paragraphStyles = {
         margin: '5px'
-    }
-    const infoStyles= {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        width: '60px',
-        boxSizing: 'border-box',
-        borderLeft: '1px solid #d2d2d2',
-        padding: '0px 12px'
-    }
+    };
 
     return (
         <div className="progress-card" style={cardStyles}>
@@ -40,20 +27,7 @@ function ProgressCard(props) {
                     {props.paragraph}
                 </div>
             </div>
-            <div className="info" style={infoStyles}>
-                {props.reference && 
-                <a href={props.reference}>
-                    <img src={bookSvg} style={{width: '100%'}}>
-                    </img>
-                </a>
-                }
-                {props.detail && 
-                <a href={props.detail}>
-                    <img src={loupeSvg} style={{width: '100%'}}>
-                    </img>
-                </a>
-                }
-            </div>
+            {props.links}
         </div>
     );
 }
