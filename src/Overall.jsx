@@ -11,8 +11,8 @@ function Overall(props){
 
     const cards = <>
     <ProgressCard
-        title="test1"
-        paragraph="test2 progress"
+        title="キャラクター作成"
+        paragraph="プロフィールだけでなくライフパスといったキャラクターの背景を描くための要素が豊富にあり、ロールプレイを好むユグドラTRPGの性格が如実に表れている。そしてこのシステムの真骨頂が能力作成。コンセプトを決め、詳細をじっくりと練って作りたい。"
         links={test1CardLinks}
     >
     </ProgressCard>

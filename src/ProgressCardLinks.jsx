@@ -7,13 +7,13 @@ function ProgressCardLinks(props){
         flexDirection: 'column',
         justifyContent: 'space-around',
         alignItems: 'center',
-        width: '60px',
         boxSizing: 'border-box',
         borderLeft: '1px solid #d2d2d2',
         padding: '0px 12px'
     };
 
     const buttonStyles = {
+        width: '40px',
         border: '0px',
         padding: '0px',
         margin: '0px',
