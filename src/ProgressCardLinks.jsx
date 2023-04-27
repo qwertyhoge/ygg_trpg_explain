@@ -1,6 +1,12 @@
 import bookSvg from './book.svg'
 import loupeSvg from './loupe.svg'
 import transitionPage from './transitionpage';
+import styled from 'styled-components';
+
+const LinkTitle = styled.p`
+margin: 2px 0px;
+font-size: 0.8em;
+`;
 
 function ProgressCardLinks(props){
     const infoStyles = {
@@ -21,18 +27,25 @@ function ProgressCardLinks(props){
         cursor: 'pointer'
     };
 
+
     return (
     <div className="links" style={infoStyles}>
         {props.reference && 
         <button onClick={() => transitionPage(props.pageSetter, props.reference)} style={buttonStyles}>
             <img src={bookSvg} style={{width: '100%'}}>
             </img>
+            <LinkTitle>
+                公式
+            </LinkTitle>
         </button>
         }
         {props.detail && 
         <button onClick={() => transitionPage(props.pageSetter, props.detail)} style={buttonStyles}>
             <img src={loupeSvg} style={{width: '100%'}}>
             </img>
+            <LinkTitle>
+                詳細
+            </LinkTitle>
         </button>
         }
     </div>
