@@ -5,7 +5,7 @@ import PageBase from "./PageBase";
 function Overall(props){
     const test1CardLinks = <ProgressCardLinks
         pageSetter={props.pageSetter}
-        reference={"test"}
+        reference={"external:http://ygg.sakura.ne.jp/yg002.html"}
         detail={"character_making"}
     ></ProgressCardLinks>;
 
