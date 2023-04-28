@@ -5,6 +5,9 @@ function transitionPage(pageSetter, link){
         window.open(externalLink);
     }else{
         pageSetter(link);
+        window.scroll(
+            {top: 0}
+        );
     }
 }
 
