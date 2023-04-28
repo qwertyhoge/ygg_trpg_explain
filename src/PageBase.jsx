@@ -7,7 +7,7 @@ function PageBase(props){
         <div className="app">
             {props.header}
             <div className="main" style={mainStyle}>
-                {props.progressCards}
+                {props.children}
             </div>
         </div>
     );
