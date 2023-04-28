@@ -59,8 +59,8 @@ function App(props) {
 
     const content = ((stPage) => {
         if(stPage === 'character_making'){
-            return constructCharacterMaking()
-        }else{
+            return constructCharacterMaking();
+        }else if(stPage === 'overall'){
             return constructOverall();
         }
     })(page);

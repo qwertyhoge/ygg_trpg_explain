@@ -1,12 +1,12 @@
 function ProgressCard(props) {
     const headerStyles = {
         borderBottom: '1px solid black',
-        fontSize: '2.0em',
+        fontSize: '1.8em',
         padding: '5px'
     };
     const wrapperStyles = {
-        maxWidth: '1480px',
-        margin: '20px auto',
+        maxWidth: '1280px',
+        margin: '40px auto',
         padding: '0px 10px'
     }
     const cardStyles = {

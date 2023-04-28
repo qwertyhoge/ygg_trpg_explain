@@ -4,8 +4,8 @@ import transitionPage from './transitionpage';
 import styled from 'styled-components';
 
 const LinkTitle = styled.p`
-margin: 2px 0px;
-font-size: 0.8em;
+margin: 4px 0px;
+font-size: 0.7em;
 `;
 
 function ProgressCardLinks(props){
@@ -16,11 +16,11 @@ function ProgressCardLinks(props){
         alignItems: 'center',
         boxSizing: 'border-box',
         borderLeft: '1px solid #d2d2d2',
-        padding: '0px 12px'
+        padding: '0px 10px'
     };
 
     const buttonStyles = {
-        width: '40px',
+        width: '35px',
         border: '0px',
         padding: '0px',
         margin: '0px',
