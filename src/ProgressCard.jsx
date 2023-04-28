@@ -28,7 +28,7 @@ function ProgressCard(props) {
                         {props.title}
                     </div>
                     <div style={paragraphStyles}>
-                        {props.paragraph}
+                        {props.children}
                     </div>
                 </div>
                 {props.links}
