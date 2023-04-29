@@ -1,5 +1,6 @@
 import ProgressCard from "./ProgressCard";
 import ProgressCardLinks from "./ProgressCardLinks";
+import ProgressParagraph from "./ProgressParagraph";
 import PageBase from "./PageBase";
 
 function GamePlay(props){
@@ -13,15 +14,20 @@ function GamePlay(props){
 
     return <PageBase header={props.header}>
         <ProgressCard title="コンディションロール">
-            HP、PPそれぞれに2d6を振り、シナリオ中の最大値をその分加算する。特にPPの分は同時に同値だけ暴走率を上昇させる。キャラシの進行表タブにコンディションロールを記載するところがあるので、利用してみるとよい。特に暴走率・PP管理が便利。
+            <ProgressParagraph>
+                HP、PPそれぞれに2d6を振り、シナリオ中の最大値をその分加算する。特にPPの分は同時に同値だけ暴走率を上昇させる。
+            </ProgressParagraph>
+            <ProgressParagraph>
+                キャラシの進行表タブにコンディションロールを記載するところがあるので、利用してみるとよい。特に暴走率・PP管理が便利。
+            </ProgressParagraph>
         </ProgressCard>
         <ProgressCard title="導入">
-            <p>
+            <ProgressParagraph>
                 導入。説明不要。
-            </p>
-            <p>
+            </ProgressParagraph>
+            <ProgressParagraph>
                 このタイミングで世界観の整理をするのも一興。
-            </p>
+            </ProgressParagraph>
         </ProgressCard>
         <ProgressCard title="シーン進行">
             ユグドラTRPGではゲームプレイをシーン単位で進めていく(必ずではないが)。これ自体は普通だが、このシステム特有の処理もぼちぼちある。
@@ -41,12 +47,17 @@ function GamePlay(props){
                     PP消費のたびに同値だけ暴走率を上昇させる。
                 </li>
                 <li>
-                    また累計PP消費5ずつで因子ダイスを1取得する。手では記録が面倒なので進行表を使うとよい。
+                    また累計PP消費5ずつで因子ダイスを1個取得する。手では記録が面倒なので進行表を使うとよい。
                 </li>
             </ul>
         </ProgressCard>
         <ProgressCard title="戦闘" links={battleLinks}>
-            戦闘も処理が結構めんどくさい。1ラウンドにも慣れないとなかなか時間がかかる印象。特にAEの種類が多く混乱するが、とりあえずはブーストコンセを覚えておけばなんとかなる。
+            <ProgressParagraph>
+                戦闘も処理が結構めんどくさい。1ラウンドにも慣れないとなかなか時間がかかる印象。
+            </ProgressParagraph>
+            <ProgressParagraph>
+                特にAEの種類が多く混乱するが、とりあえずはブーストコンセを覚えておけばなんとかなる。
+            </ProgressParagraph>
         </ProgressCard>
         <ProgressCard title="クリア処理" links={clearLinks}>
             下記の順で処理を行う。

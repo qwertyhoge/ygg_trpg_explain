@@ -1,6 +1,7 @@
 import ProgressCard from "./ProgressCard";
 import ProgressCardLinks from "./ProgressCardLinks";
 import PageBase from "./PageBase";
+import ProgressParagraph from "./ProgressParagraph";
 
 function CharacterMaking(props){
     const preparationLinks = <ProgressCardLinks
@@ -16,10 +17,20 @@ function CharacterMaking(props){
 
     return <PageBase header={props.header}>
         <ProgressCard title="事前準備" links={preparationLinks}>
-            公式ページからステータス算出表のxlsをダウンロードする。ステータス算出表とは言うが、事実上のキャラシ。結構複雑なので、公式ページを参照の上作成されたし。ちなみにキャラ作成には乱数が絡まず、望み通りのキャラを作れる。ただ成長要素も特にない。
+            <ProgressParagraph>
+                公式ページからステータス算出表のxlsをダウンロードする。ステータス算出表とは言うが、事実上のキャラシ。結構複雑なので、公式ページを参照の上作成されたし。
+            </ProgressParagraph>
+            <ProgressParagraph>
+                ちなみにキャラ作成には乱数が絡まず、望み通りのキャラを作れる。ただ成長要素も特にない。
+            </ProgressParagraph>
         </ProgressCard>
         <ProgressCard title="プロフィール作成">
-            ユグドラTRPG自体がロールプレイを重視している傾向にある。GMもRPが好き。ここで背景設定をしっかりと練るとRP方針が固めやすいはず。ライフパスから先にプロフィールを考え始めるのも一つの手。キャラ絵は描くなりPicrewで組むなり版権持ってくるなり好きにどうぞ。
+            <ProgressParagraph>
+                ユグドラTRPG自体がロールプレイを重視している傾向にある。GMもRPが好き。ここで背景設定をしっかりと練るとRP方針が固めやすいはず。ライフパスから先にプロフィールを考え始めるのも一つの手。
+            </ProgressParagraph>
+            <ProgressParagraph>
+                キャラ絵は描くなりPicrewで組むなり版権持ってくるなり好きにどうぞ。
+            </ProgressParagraph>
         </ProgressCard>
         <ProgressCard title="タイプ決定">
             ここで決定するタイプは活性タイプ、身体タイプ、能力タイプの三つ。
@@ -63,10 +74,20 @@ function CharacterMaking(props){
             </ul>
         </ProgressCard>
         <ProgressCard title="パラメータ決定・算出">
-            計10p(マイナス含)と計5p相当のキャラ特性(フレーバー付き割り振り)を自由に6種のパラメータに振り分けることができる。また、ステータスに応じて格闘・武器・能力攻撃力を調整できる。キャラシに適切に書き込めば、各種数値の算出は勝手にやってくれる。
+            <ProgressParagraph>
+                計10p(マイナス含)と計5p相当のキャラ特性(フレーバー付き割り振り)を自由に6種のパラメータに振り分けることができる。また、ステータスに応じて格闘・武器・能力攻撃力を調整できる。
+            </ProgressParagraph>
+            <ProgressParagraph>
+                自由割り振りをキャラシに適切に書き込めば、各種数値の算出は勝手にやってくれる。
+            </ProgressParagraph>
         </ProgressCard>
         <ProgressCard title="能力作成" links={abilityMakingLinks}>
-            ユグドラTRPGの醍醐味にして死ぬほど複雑なシステム。複雑さを代償とした分、作りたい能力はだいたいなんでも作れるようになっている。なんならここを考えるのがこのシステムで一番楽しい。後述するSPEやカルマ、果てはAEやバーストをフレーバーの特殊技として作っておくこともできる。
+            <ProgressParagraph>
+                ユグドラTRPGの醍醐味にして死ぬほど複雑なシステム。複雑さを代償とした分、作りたい能力はだいたいなんでも作れるようになっている。なんならここを考えるのがこのシステムで一番楽しい。
+            </ProgressParagraph>
+            <ProgressParagraph>
+                後述するSPEやカルマ、果てはAE(特定の行動)などをフレーバーの特殊技として作っておくこともできる。
+            </ProgressParagraph>
         </ProgressCard>
         <ProgressCard title="装備等決め">
             使用制限付きのやつとかを決める。
