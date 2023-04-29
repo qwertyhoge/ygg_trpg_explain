@@ -1,9 +1,10 @@
 import {useState} from 'react';
+import AppHeader from './AppHeader';
+import Breadcrumb from './Breadcrumb';
 import Overall from "./Overall";
 import CharacterMaking from './CharacterMaking';
 import AbilityMaking from './AbilityMaking';
-import Breadcrumb from './Breadcrumb';
-import AppHeader from './AppHeader';
+import GamePlay from './GamePlay';
 
 function App(props) {
     const [page, setPage] = useState('overall');
@@ -89,6 +90,31 @@ function App(props) {
             pageSetter={setPage}
         ></AbilityMaking>
     }
+    const constructGamePlay = () => {
+        const breadcrumb = <Breadcrumb
+            route={[
+                {
+                    id: 'overall',
+                    name: '全体',
+                    key: 'overall'
+                },
+                {
+                    id: 'game_play',
+                    name: 'ゲームプレイ',
+                    key: 'game_play'
+                }
+            ]}
+            pageSetter={setPage}
+        ></Breadcrumb>;
+        const header = <AppHeader
+            breadcrumb={breadcrumb}
+            pageTitle='ゲームプレイ'
+        ></AppHeader>;
+        return <GamePlay
+        header={header}
+        pageSetter={setPage}
+        ></GamePlay>
+    }
 
     const content = ((stPage) => {
         if(stPage === 'character_making'){
@@ -97,6 +123,8 @@ function App(props) {
             return constructOverall();
         }else if(stPage === 'ability_making'){
             return constructAbilityMaking();
+        }else if(stPage === 'game_play'){
+            return constructGamePlay();
         }
     })(page);
 
