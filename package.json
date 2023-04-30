@@ -1,7 +1,7 @@
 {
-  "name": "react_intro",
+  "name": "ygg_trpg_explain",
   "version": "1.0.0",
-  "description": "test project of react.js",
+  "description": "explanation for ygg trpg.",
   "main": "server/server.js",
   "scripts": {
     "test": "babel-node server/server.js",
@@ -19,7 +19,6 @@
   "bugs": {
     "url": "https://github.com/qwertyhoge/ygg_trpg_explain/issues"
   },
-  "homepage": "https://github.com/qwertyhoge/ygg_trpg_explain#readme",
   "dependencies": {
     "@babel/core": "^7.2.0",
     "@babel/node": "^7.2.2",
