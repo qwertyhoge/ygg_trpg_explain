@@ -6,10 +6,12 @@ import PageBase from "./PageBase";
 function GamePlay(props){
     const battleLinks = <ProgressCardLinks
     reference="external:http://ygg.sakura.ne.jp/yg88.html"
-    detail="battle">
+    detail="battle"
+    pageSetter={props.pageSetter}>
     </ProgressCardLinks>
     const clearLinks = <ProgressCardLinks
-    reference="external:http://ygg.sakura.ne.jp/yg94.html">
+    reference="external:http://ygg.sakura.ne.jp/yg94.html"
+    pageSetter={props.pageSetter}>
     </ProgressCardLinks>
 
     return <PageBase header={props.header}>

@@ -5,6 +5,7 @@ import Overall from "./Overall";
 import CharacterMaking from './CharacterMaking';
 import AbilityMaking from './AbilityMaking';
 import GamePlay from './GamePlay';
+import Battle from './Battle';
 
 function App(props) {
     const [page, setPage] = useState('overall');
@@ -114,6 +115,36 @@ function App(props) {
         header={header}
         pageSetter={setPage}
         ></GamePlay>
+    };
+    const constructBattle = () => {
+        const breadcrumb = <Breadcrumb
+            route={[
+                {
+                    id: 'overall',
+                    name: '全体',
+                    key: 'overall'
+                },
+                {
+                    id: 'game_play',
+                    name: 'ゲームプレイ',
+                    key: 'game_play'
+                },
+                {
+                    id: 'battle',
+                    name: '戦闘',
+                    key: 'battle'
+                }
+            ]}
+            pageSetter={setPage}
+        ></Breadcrumb>;
+        const header = <AppHeader
+            breadcrumb={breadcrumb}
+            pageTitle='戦闘'
+        ></AppHeader>;
+        return <Battle
+        header={header}
+        pageSetter={setPage}
+        ></Battle>
     }
 
     const content = ((stPage) => {
@@ -125,11 +156,12 @@ function App(props) {
             return constructAbilityMaking();
         }else if(stPage === 'game_play'){
             return constructGamePlay();
+        }else if(stPage === 'battle'){
+            return constructBattle();
         }
     })(page);
 
     return content;
 }
-
 
 export default App;
