@@ -6,6 +6,7 @@ import CharacterMaking from './CharacterMaking';
 import AbilityMaking from './AbilityMaking';
 import GamePlay from './GamePlay';
 import Battle from './Battle';
+import HouseRules from './HouseRules';
 
 function App(props) {
     const [page, setPage] = useState('overall');
@@ -145,7 +146,32 @@ function App(props) {
         header={header}
         pageSetter={setPage}
         ></Battle>
-    }
+    };
+    const constructHouseRules = () => {
+        const breadcrumb = <Breadcrumb
+            route={[
+                {
+                    id: 'overall',
+                    name: '全体',
+                    key: 'overall'
+                },
+                {
+                    id: 'house_rules',
+                    name: 'ハウスルール',
+                    key: 'house_rules'
+                }
+            ]}
+            pageSetter={setPage}
+        ></Breadcrumb>;
+        const header = <AppHeader
+            breadcrumb={breadcrumb}
+            pageTitle='ハウスルール'
+        ></AppHeader>;
+        return <HouseRules
+        header={header}
+        pageSetter={setPage}
+        ></HouseRules>
+    };
 
     const content = ((stPage) => {
         if(stPage === 'character_making'){
@@ -158,6 +184,8 @@ function App(props) {
             return constructGamePlay();
         }else if(stPage === 'battle'){
             return constructBattle();
+        }else if(stPage === 'house_rules'){
+            return constructHouseRules();
         }
     })(page);
 

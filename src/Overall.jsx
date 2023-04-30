@@ -5,7 +5,7 @@ import PageBase from "./PageBase";
 function Overall(props){
     const notificationLinks = <ProgressCardLinks
         pageSetter={props.pageSetter}
-        detail="houserules"
+        detail="house_rules"
     ></ProgressCardLinks>
     const characterMakingLinks = <ProgressCardLinks
         pageSetter={props.pageSetter}
@@ -21,13 +21,13 @@ function Overall(props){
     return (
         <PageBase header={props.header}>
             <ProgressCard title="諸注意" links={notificationLinks}>
-                セッション上留意してほしいこと色々。またハウスルールは右のリンクから。ただし用語の説明はしていないので、一通りルールを読んでから戻ってくるのを推奨。
+                セッション上留意してほしいこと色々。ハウスルールは右のリンクから。ただし用語の説明はしていないので、一通りルールを読んでから戻ってくるのを推奨。
                 <ul>
                     <li>
                         システムがうるさいくらいにバランスブレイカーな設定を嫌っているので、良識の範囲内で作ってほしい。
                     </li>
                     <li>
-                        RP推奨。シーン中のキャラの探索や行動回数制限付きの行動など。音声/テキストは問わない。
+                        RP推奨。初めて披露する技や行動回数制限付きの行動など。音声/テキストは問わない。
                         <ul>
                             <li>
                                 予定ではGMは音声とテキストの両方をやります(RPとして+ログ残し)。
