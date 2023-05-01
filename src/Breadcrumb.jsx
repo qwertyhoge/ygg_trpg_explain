@@ -10,7 +10,7 @@ font-size: 1.1rem;
     color: #444444;
     @media(max-width:480px){
         padding: 0px;
-        font-size:0.1em;
+        font-size:0.4em;
     }
 }
 &:last-child:after{
@@ -28,7 +28,7 @@ background-color: #eff6ff;
 cursor: pointer;
 font-size: 0.8em;
 @media(max-width:480px){
-    font-size:0.3em;
+    font-size:0.5em;
 }
 `;
 

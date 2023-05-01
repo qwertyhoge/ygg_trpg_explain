@@ -7,7 +7,7 @@ const LinkTitle = styled.p`
 margin: 4px 0px;
 font-size: 0.7em;
 @media(max-width:480px){
-    font-size: 0.2em;
+    font-size: 0.4em;
 }
 `;
 
