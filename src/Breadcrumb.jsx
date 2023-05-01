@@ -8,10 +8,15 @@ font-size: 1.1rem;
     padding: 0 0.2em;
     font-size: 0.7em;
     color: #444444;
+    @media(max-width:480px){
+        padding: 0px;
+        font-size:0.1em;
+    }
 }
 &:last-child:after{
     content: "";
 }
+
 `;
 
 const Button = styled.button`
@@ -21,6 +26,10 @@ border: 1px #aaa solid;
 border-radius: 5px;
 background-color: #eff6ff;
 cursor: pointer;
+font-size: 0.8em;
+@media(max-width:480px){
+    font-size:0.3em;
+}
 `;
 
 function Breadcrumb(props) {

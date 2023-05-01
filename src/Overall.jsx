@@ -40,6 +40,12 @@ function Overall(props){
                     <li>
                         他PLの迷惑になるプレイングは控えてほしい(正直心配はしてません)。
                     </li>
+                    <li>
+                        このページはプレイの流れを明瞭にするためだけのサマリーなので、処理の詳細は必ず公式を参照pls。
+                    </li>
+                    <li>
+                        数年越しにシステム再編中らしい(今回のセッションには無関係)。
+                    </li>
                 </ul>
             </ProgressCard>
             <ProgressCard title="キャラクター作成" links={characterMakingLinks}>

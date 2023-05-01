@@ -6,6 +6,20 @@ import styled from 'styled-components';
 const LinkTitle = styled.p`
 margin: 4px 0px;
 font-size: 0.7em;
+@media(max-width:480px){
+    font-size: 0.2em;
+}
+`;
+
+const IconButton = styled.button`
+width: 35px;
+border: 0px;
+padding: 0px;
+margin: 0px;
+cursor: pointer;
+@media(max-width:480px){
+    width: 20px;
+}
 `;
 
 function ProgressCardLinks(props){
@@ -19,34 +33,25 @@ function ProgressCardLinks(props){
         padding: '0px 10px'
     };
 
-    const buttonStyles = {
-        width: '35px',
-        border: '0px',
-        padding: '0px',
-        margin: '0px',
-        cursor: 'pointer'
-    };
-
-
     return (
     <div className="links" style={infoStyles}>
         {props.reference && 
-        <button onClick={() => transitionPage(props.pageSetter, props.reference)} style={buttonStyles}>
+        <IconButton onClick={() => transitionPage(props.pageSetter, props.reference)}>
             <img src={bookSvg} style={{width: '100%'}}>
             </img>
             <LinkTitle>
                 公式
             </LinkTitle>
-        </button>
+        </IconButton>
         }
         {props.detail && 
-        <button onClick={() => transitionPage(props.pageSetter, props.detail)} style={buttonStyles}>
+        <IconButton onClick={() => transitionPage(props.pageSetter, props.detail)}>
             <img src={loupeSvg} style={{width: '100%'}}>
             </img>
             <LinkTitle>
                 詳細
             </LinkTitle>
-        </button>
+        </IconButton>
         }
     </div>
     );

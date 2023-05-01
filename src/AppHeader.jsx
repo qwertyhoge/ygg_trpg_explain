@@ -1,10 +1,17 @@
+import styled from "styled-components";
+
+const Header = styled.header`
+background: #f6f8ff;
+min-height: 90px;
+position: relative;
+padding-top: 10px;
+@media(max-width:480px){
+    min-height: 60px;
+    padding-top: 2px;
+}
+`;
+
 function AppHeader(props){
-    const headerStyles = {
-        background: '#f6f8ff',
-        minHeight: '90px',
-        position: 'relative',
-        paddingTop: '10px'
-    };
     const breadcrumbStyles = {
         position: 'absolute',
         bottom: '5px'
@@ -20,7 +27,7 @@ function AppHeader(props){
     }
     
     return (
-    <header className="app-header" style={headerStyles}>
+    <Header className="app-header">
         <div style={breadcrumbStyles}>
             {props.breadcrumb}
         </div>
@@ -29,7 +36,7 @@ function AppHeader(props){
             {props.pageTitle}
         </p>
         }
-    </header>
+    </Header>
     )
 }
 
