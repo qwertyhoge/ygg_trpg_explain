@@ -5,8 +5,10 @@
   "main": "server/server.js",
   "scripts": {
     "test": "babel-node server/server.js",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && webpack"
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && webpack",
+    "deploy": "gh-pages -d ghpages"
   },
+  "homepage": "https://qwertyhoge.github.io/ygg_trpg_explain",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qwertyhoge/ygg_trpg_explain.git"
@@ -43,6 +45,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",
     "file-loader": "^6.2.0",
+    "gh-pages": "^5.0.0",
     "styled-components": "^5.3.10"
   }
 }
