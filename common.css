@@ -7,3 +7,9 @@ body{
     Meiryo,
     sans-serif;
 }
+
+@media (max-width:480px){
+    body{
+        font-size: 0.5em;
+    }
+}
