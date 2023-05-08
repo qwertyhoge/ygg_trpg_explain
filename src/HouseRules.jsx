@@ -7,12 +7,31 @@ function HouseRules(props){
         <ProgressCard title="防御発動の補正先決">
             防御発動は防御力と精神抵抗を上げることができるが、どちらを上げるかは能力作成の段階で1つに定める。
         </ProgressCard>
+        <ProgressCard title="AE【重撃】の発動系統記載不要">
+            <ProgressParagraph>
+                キャラシでは能力応用技の発動系統リストにAE【重撃】が載っているが、これはルール上発動系統ではない。よって、そこに記載せずともAE【重撃】で使用してよい。
+            </ProgressParagraph>
+            <ProgressParagraph>
+                発動系統ではない以上、AE【重撃】のみ記載した能力応用技は認めない。
+            </ProgressParagraph>
+        </ProgressCard>
         <ProgressCard title="行為発動のコスト0">
             <ProgressParagraph>
                 行為発動の応用技をフレーバー目的で行使する際、コスト0でよい(特殊武装【アタッチメント】に準拠)。
             </ProgressParagraph>
             <ProgressParagraph>
                 ただし能力が有利に働きそうなときはGMに相談の上コスト消費し、有利な判定を行ってもよい。
+            </ProgressParagraph>
+        </ProgressCard>
+        <ProgressCard title="総員判定">
+            <ProgressParagraph>
+                当卓独自のロール。対象者全員で技能ロールを行い、その合計値で判定を行う。
+            </ProgressParagraph>
+            <ProgressParagraph>
+                目標値がある場合は(目標値)x(人数)に達したかどうかで正否が判断される。
+            </ProgressParagraph>
+            <ProgressParagraph>
+                倍差成功/失敗はそれぞれのPCで判定し、倍差成功したPCは因子ダイスを1個受け取れる。また倍差成功/失敗一つにつき+1,-1でおまけ成分を決定する。
             </ProgressParagraph>
         </ProgressCard>
         <ProgressCard title="イニシアティブフェイズの一斉宣言">
@@ -24,7 +43,7 @@ function HouseRules(props){
             </ProgressParagraph>
         </ProgressCard>
         <ProgressCard title="同行動値の並列処理">
-            同じ時系列でアクションフェイズを処理した扱いとし、原則として片方の結果がもう片方の結果に影響することはない。
+            同じ時系列でアクションフェイズを処理した扱いとし、原則として片方の結果がもう片方の結果に影響しない。
         </ProgressCard>
         <ProgressCard title="疲労状態の事後適用">
             PPが0となったとき疲労状態となるが、PPが0になる原因となった判定などは通常通りに処理する。それ以降の処理には疲労状態を適用する。
