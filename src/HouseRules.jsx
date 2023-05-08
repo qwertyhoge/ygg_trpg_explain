@@ -28,7 +28,7 @@ function HouseRules(props){
                 当卓独自のロール。対象者全員で技能ロールを行い、その合計値で判定を行う。
             </ProgressParagraph>
             <ProgressParagraph>
-                目標値がある場合は(目標値)x(人数)に達したかどうかで正否が判断される。
+                目標値がある場合は(目標値)x(人数)に達したかどうかで成否が判断される。
             </ProgressParagraph>
             <ProgressParagraph>
                 倍差成功/失敗はそれぞれのPCで判定し、倍差成功したPCは因子ダイスを1個受け取れる。また倍差成功/失敗一つにつき+1,-1でおまけ成分を決定する。
