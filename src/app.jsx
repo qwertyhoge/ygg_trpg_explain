@@ -7,6 +7,7 @@ import AbilityMaking from './AbilityMaking';
 import GamePlay from './GamePlay';
 import Battle from './Battle';
 import HouseRules from './HouseRules';
+import AutoCharacterSymbolCreation from './AutoCharacterSymbolCreation';
 
 function App(props) {
     const [page, setPage] = useState('overall');
@@ -172,6 +173,36 @@ function App(props) {
         pageSetter={setPage}
         ></HouseRules>
     };
+    const constructAutoCharacterSymbolCreation = () => {
+        const breadcrumb = <Breadcrumb
+            route={[
+                {
+                    id: 'overall',
+                    name: '全体',
+                    key: 'overall'
+                },
+                {
+                    id: 'character_making',
+                    name: 'キャラクター作成',
+                    key: 'character_making'
+                },
+                {
+                    id: 'auto_symbol_creation',
+                    name: 'コマデータ自動作成',
+                    key: 'auto_symbol_creation'
+                }
+            ]}
+            pageSetter={setPage}
+        ></Breadcrumb>
+        const header = <AppHeader
+            breadcrumb={breadcrumb}
+            pageTitle='ハウスルール'
+        ></AppHeader>;
+        return <AutoCharacterSymbolCreation
+            header={header}
+            pageSetter={setPage}
+        ></AutoCharacterSymbolCreation>
+    };
 
     const content = ((stPage) => {
         if(stPage === 'character_making'){
@@ -186,6 +217,8 @@ function App(props) {
             return constructBattle();
         }else if(stPage === 'house_rules'){
             return constructHouseRules();
+        }else if(stPage === 'auto_symbol_creation'){
+            return constructAutoCharacterSymbolCreation();
         }
     })(page);
 

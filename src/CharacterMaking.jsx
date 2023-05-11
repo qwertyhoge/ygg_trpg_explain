@@ -14,6 +14,11 @@ function CharacterMaking(props){
     pageSetter={props.pageSetter}
     >
     </ProgressCardLinks>
+    const autoCreationLinks = <ProgressCardLinks
+    detail="auto_symbol_creation"
+    pageSetter={props.pageSetter}
+    >
+    </ProgressCardLinks>
 
     return <PageBase header={props.header}>
         <ProgressCard title="事前準備" links={preparationLinks}>
@@ -158,6 +163,9 @@ function CharacterMaking(props){
                     </ul>
                 </li>
             </ul>
+        </ProgressCard>
+        <ProgressCard title="コマ作成自動化のすすめ" links={autoCreationLinks}>
+            スプレッドシートのデータからCCFOLIAのコマ作成を半自動化するスクリプトを組んだ。やや使い方は面倒だが、是非活用してほしい。
         </ProgressCard>
     </PageBase>
 }
