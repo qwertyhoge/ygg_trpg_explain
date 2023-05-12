@@ -6,6 +6,7 @@ import newTab from "./newTab.png"
 import showDetail from "./showDetail.png"
 import movePage from "./movePage.png"
 import copyText from "./copyText.png"
+import selectVersion from "./selectVersion.png"
 import ProgressCard from "./ProgressCard";
 import styled from "styled-components";
 
@@ -28,11 +29,12 @@ const textareaStyles = {
 const ImgDiv = styled.div`
     background-color: #ccc;
     padding: 10px;
+    width: fit-content;
 `;
 
 function AutoCharacterSymbolCreation(props){
     const code = `function onOpen(){
-    autoSymbolMaker.onOpen();
+    autoSymbolMaker.addMenu(true, "autoSymbolMaker");
 }`;
     return <PageBase header={props.header}>
         <ProgressCard title="Apps Script起動">
@@ -51,7 +53,7 @@ function AutoCharacterSymbolCreation(props){
             <div style={quoteStyles}>
                 1qmpCc1LGZjZHeatuEE9YtNDS8BkaS5n6ttFGuhaYoJmNORv0SVBDQcqr
             </div>
-            このIDを検索欄に貼り付け、検索して追加。バージョンはHEADか2。
+            このIDを検索欄に貼り付け、検索してそのまま追加。
         </ProgressCard>
         <ProgressCard title="コード呼び出し">
             最初からあるコード.gsの中身を次のものに書き換える。
